@@ -1,23 +1,7 @@
 # SubHub
 
 ## Description
-Basic information on a search Sydney suburb.
-
-
-
-## Scope
- - weather * Must Have
- - news capture API * won't - most tlikely too ambiguous to yeild good response, potential paywalls
- - maritime info (tides etc) * could have
- - tourist info (TripAdvisor) * Must Have
- - public transport * Should have
- - places to stay (AirBnB) * Must Have
- 
-Must - MVP
-Should - MVP but can be sacraficed
-Could - if we have time
-Wont
-
+Basic information Sydney's suburbs, for exploring different localities in Sydney.
 
 ## User Story
 As a... resident during covid-19 pandemic that can't leave the state
