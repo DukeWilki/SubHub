@@ -62,29 +62,29 @@ so that... I don't have to carry my computer with me
 - Mock-ups/ wireframes
 
 - Home Page
-- Global CSS elements 
-- Global HTML elements 
-- Search Bar
-- Array
+    - Global CSS elements 
+    - Global HTML elements 
+    - Search Bar
+    - Array
 
 - Results Page
-- Specific CSS elements
-- Weather API
+    - Specific CSS elements
+    - Weather API
 
 - Foodies Page
-- Specific CSS elements
-- Specific HTML page
-- Zomato API
+    - Specific CSS elements
+    - Specific HTML page
+    - Zomato API
 
 - Activities Page
-- Specific CSS elements
-- Specific HTML page
-- TripAdvisor API
+    - Specific CSS elements
+    - Specific HTML page
+    - TripAdvisor API
 
 - Weather Page 
-- Specific CSS elements
-- Specific HTML page
-- Open Weather Maps API
+    - Specific CSS elements
+    - Specific HTML page
+    - Open Weather Maps API
 
 - Maps Function
-- API to external app 
+    - API to external app 
