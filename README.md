@@ -20,9 +20,9 @@ As a... driver
 I want... to know the best way to drive somehwere
 so that... I don't get lost
 
-As a... overnight/weekend tripper
-I want... to find somewhere to sleep
-so that... I rest peacefully
+As a... foodie traveller
+I want... to find somewhere good to eat
+so that... I can enjoy the best restaurants
 
 As a... traveller
 I want.. the site to look good on mobile
@@ -42,12 +42,11 @@ so that... I don't have to carry my computer with me
     - accom
     - things to do
     - maps
-- Accom Page
-    - AirBnB homestays
+- Foodies Page
+    - Zomato
 - Activities Page
     - Trip Advisor 
         - activities
-        - restaurants
 - Weather page
     - Open Weather Maps
         - Week forecast
@@ -72,10 +71,10 @@ so that... I don't have to carry my computer with me
 - Specific CSS elements
 - Weather API
 
-- Accom Page
+- Foodies Page
 - Specific CSS elements
 - Specific HTML page
-- AirBnB API
+- Zomato API
 
 - Activities Page
 - Specific CSS elements
