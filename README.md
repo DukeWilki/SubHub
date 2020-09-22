@@ -35,3 +35,57 @@ so that... I don't have to carry my computer with me
 - AirBnB
 - TripGo or Google maps
 
+## MVP
+- Front Page: Seach function a dropdown list of all Sydney Suburbs
+- Results Page : Dynamically created page with very breif info and icons for each child page:
+    - weather
+    - accom
+    - things to do
+    - maps
+- Accom Page
+    - AirBnB homestays
+- Activities Page
+    - Trip Advisor 
+        - activities
+        - restaurants
+- Weather page
+    - Open Weather Maps
+        - Week forecast
+        - Wind
+        - Temp
+        - Conditions
+        - Water conds if available
+ - Maps
+        - Opens to external application
+        - Suburb listed in "To"
+
+## Work Breakdown
+- Mock-ups/ wireframes
+
+- Home Page
+- Global CSS elements 
+- Global HTML elements 
+- Search Bar
+- Array
+
+- Results Page
+- Specific CSS elements
+- Weather API
+
+- Accom Page
+- Specific CSS elements
+- Specific HTML page
+- AirBnB API
+
+- Activities Page
+- Specific CSS elements
+- Specific HTML page
+- TripAdvisor API
+
+- Weather Page 
+- Specific CSS elements
+- Specific HTML page
+- Open Weather Maps API
+
+- Maps Function
+- API to external app 
