@@ -20,9 +20,9 @@ As a... driver
 I want... to know the best way to drive somehwere
 so that... I don't get lost
 
-As a... overnight/weekend tripper
-I want... to find somewhere to sleep
-so that... I rest peacefully
+As a... foodie traveller
+I want... to find somewhere good to eat
+so that... I can enjoy the best restaurants
 
 As a... traveller
 I want.. the site to look good on mobile
@@ -35,3 +35,56 @@ so that... I don't have to carry my computer with me
 - AirBnB
 - TripGo or Google maps
 
+## MVP
+- Front Page: Seach function a dropdown list of all Sydney Suburbs
+- Results Page : Dynamically created page with very breif info and icons for each child page:
+    - weather
+    - accom
+    - things to do
+    - maps
+- Foodies Page
+    - Zomato
+- Activities Page
+    - Trip Advisor 
+        - activities
+- Weather page
+    - Open Weather Maps
+        - Week forecast
+        - Wind
+        - Temp
+        - Conditions
+        - Water conds if available
+ - Maps
+        - Opens to external application
+        - Suburb listed in "To"
+
+## Work Breakdown
+- Mock-ups/ wireframes
+
+- Home Page
+    - Global CSS elements 
+    - Global HTML elements 
+    - Search Bar
+    - Array
+
+- Results Page
+    - Specific CSS elements
+    - Weather API
+
+- Foodies Page
+    - Specific CSS elements
+    - Specific HTML page
+    - Zomato API
+
+- Activities Page
+    - Specific CSS elements
+    - Specific HTML page
+    - TripAdvisor API
+
+- Weather Page 
+    - Specific CSS elements
+    - Specific HTML page
+    - Open Weather Maps API
+
+- Maps Function
+    - API to external app 
