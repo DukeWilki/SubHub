@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<script async defer
+        		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPWKk7dh9vSqX2ubJubUiPKHr_FVBwaHA&libraries=places&callback=initMap">
+        	</script>
+	</head>
+	<body align="center">
+		<font size="30">
+			search for: "<span id="keyword_id"></span>"
+		</font>
+		<div align="center">
+			<div style=width="500px">
+				<div id="resto_type_id"></div>
+				<div id="lng_id"></div>
+				<div id="lat_id"></div>
+			</div>
+			<table>
+				<tr>
+				<td width="50%">
+					<span id="icon_id"></span>
+					<ul>
+						<li id="title_id"></li>
+						<li id="location_id"></li>
+						<li id="address"></li>
+						<li id="rating"></li>
+					</ul>
+				</td>
+				<td width="50%">
+					<div id="map" style="width:500px;height:250px"></div>
+				</td>
+				</tr>
+		</div>
+	</body>
+	<script src="result_page.js"></script>
+</html>
