@@ -9,11 +9,11 @@ html, body
 
 body
 {
- 
-	background-image: url(assets/subhub.png);
+ 	background-image: url(assets/subhub.png);
 	background-repeat: no-repeat;
 	width: auto;
-	height: auto;
+    height: auto;
+    background-size: cover;
 }
 
 .tb

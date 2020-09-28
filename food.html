@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta name="description" content="travel web" />
+    <meta name="keywords" content="travel website">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+
+    <link href="places.css" rel="stylesheet">
+
+
+    <title>Sub Hub Foodies</title>
+
+
+    <style> 
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .tags {
+            display: flex;
+            height: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .subtags {
+            display: flex;
+            height: 5 0px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            padding: 0px;
+            align-items: center;
+        }
+
+        .btn-outline-primary {
+            margin-top: 10px;
+            margin: 5px;
+        }
+
+        .open {
+            width: 250px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        h4 {
+            margin-left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div class="container food-container">
+    <div class="row">
+        <div class="col tags">
+            <button type="button" id="asian" class="btn btn-outline-primary asian">Asian</button>
+            <button type="button" id="southAsian" class="btn btn-outline-primary">South Asian</button>
+            <button type="button" id="european" class="btn btn-outline-primary">European</button>
+            <button type="button" id="middleEastern" class="btn btn-outline-primary">Middle Eastern</button>
+            <button type="button" id="american" class="btn btn-outline-primary">American</button>
+            <button type="button" id="african" class="btn btn-outline-primary">African</button>
+            <button type="button" id="iceCream" class="btn btn-outline-primary">Ice Cream</button>
+            <button type="button" id="bakeries" class="btn btn-outline-primary">Bakeries</button>
+            <button type="button" id="barbeque" class="btn btn-outline-primary">Barbeque</button>
+            <button type="button" id="fastFood" class="btn btn-outline-primary">Fast Food</button>
+        </div>
+    </div>
+    <div class="row"></div>
+        <div class="col subtags">
+        <div id="asianTags" class="hidden">
+            <!-- ASIAN -->
+            <button type="button" id="allasian" class="btn btn-outline-primary subAsian">All Asian</button>
+            <button type="button" id="chinese" class="btn btn-outline-primary subAsian">Chinese</button>
+            <button type="button" id="japanese" class="btn btn-outline-primary subAsian">Japanese</button>
+            <button type="button" id="korean" class="btn btn-outline-primary subAsian">Korean</button>
+            <button type="button" id="thai" class="btn btn-outline-primary subAsian">Thai</button>
+            <button type="button" id="malaysian" class="btn btn-outline-primary subAsian">Malaysian</button>
+            <button type="button" id="veitnamese" class="btn btn-outline-primary subAsian">Veitnamese</button>
+            <button type="button" id="southeastasian" class="btn btn-outline-primary subAsian">South East Asian</button>
+        </div>
+        <div id="southAsianTags" class="hidden">
+            <!-- SOUTH ASIAN -->
+            <button type="button" id="allSouthAsian" class="btn btn-outline-primary subSouthAsian">All South Asian</button>
+            <button type="button" id="indian" class="btn btn-outline-primary subSouthAsian">Indian</button>
+            <button type="button" id="pakistani" class="btn btn-outline-primary subSouthAsian">Pakistani</button>
+            <button type="button" id="nepalese" class="btn btn-outline-primary subSouthAsian">Nepalese</button>
+        </div>
+        <div id="europeanTags" class="hidden">
+            <!-- EUROPEAN -->
+            <button type="button" id="allEuropean" class="btn btn-outline-primary subEuropean">All European</button>
+            <button type="button" id="italian" class="btn btn-outline-primary subEuropean">Italian</button>
+            <button type="button" id="greek" class="btn btn-outline-primary subEuropean">Greek</button>
+            <button type="button" id="german" class="btn btn-outline-primary subEuropean">German</button>
+            <button type="button" id="french" class="btn btn-outline-primary subEuropean">French</button>
+            <button type="button" id="pizza" class="btn btn-outline-primary subEuropean">Pizza</button>
+        </div>
+        <div id="middleEasternTags" class="hidden">
+            <!-- MIDDLE EASTERN -->
+            <button type="button" id="allMiddleEastern" class="btn btn-outline-primary subMiddleEastern">All Middle Eastern</button>
+            <button type="button" id="turkish" class="btn btn-outline-primary subMiddleEastern">Turkish</button>
+            <button type="button" id="lebanese" class="btn btn-outline-primary subMiddleEastern">Lebanese</button>
+        </div>
+        <div id="americanTags" class="hidden">
+            <!-- AMERICAN -->
+            <button type="button" id="allAmerican" class="btn btn-outline-primary subAmerican">All American</button>
+            <button type="button" id="mexican" class="btn btn-outline-primary subAmerican">Mexican</button>
+            <button type="button" id="brazilian" class="btn btn-outline-primary subAmerican">Brazilian</button>
+            <button type="button" id="burgers" class="btn btn-outline-primary subAmerican">Burgers</button>
+        </div>
+        <div id="fastFoodTags" class="hidden">
+            <!-- FAST FOOD -->
+            <button type="button" id="allFastFood" class="btn btn-outline-primary subAmerican">All Fast Food</button>
+            <button type="button" id="kebabs" class="btn btn-outline-primary subAmerican">Kebabs</button>
+            <button type="button" id="fishnChips" class="btn btn-outline-primary subAmerican">Fish and Chips</button>
+            <button type="button" id="burgers" class="btn btn-outline-primary subAmerican">Burgers</button>
+            <button type="button" id="pizza" class="btn btn-outline-primary subEuropean">Pizza</button>
+        </div>
+        </div>
+    </div>
+    <div class="row">
+        <h4>Top [CUISINE] restaurants in or near [SUBURB]</h4>
+    </div>
+    <div class="row">
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+
+            <div class="profile-card-2" id="recomendation1"><img src="assets/food.png" class="img img-responsive" style="width:350px">
+                <div id="food-card" class="profile-name"><h2 id="name1"></h2><h3 id="location1"></h3></div>
+                <ul id="list1" class="hidden">
+                    <li>Address</li>
+                    <li>Open Now?</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="profile-card-2" id="recomendation2"><img src="assets/food.png" class="img img-responsive" style="width:350px">
+                <div id="travel-card" class="profile-name"><h2 id="name2"></h2><h3 id="location2"></div>
+                <ul id="list2" class="hidden">
+                    <li>Address</li>
+                    <li>Open Now?</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="profile-card-2" id="recomendation3"><img src="assets/food.png" class="img img-responsive" style="width:350px">
+                <div id="weather-card" class="profile-name"><h2 id="name3"></h2><h3 id="location3"></div>
+                <ul id="list3" class="hidden">
+                    <li>Address</li>
+                    <li>Open Now?</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<script src="food.js"></script>
+</body>
+
+</html>
