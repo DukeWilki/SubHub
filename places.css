@@ -1,6 +1,17 @@
 /* TODO: Step 4A1: Make a generic sidebar */
 /* Styling for an info pane that slides out from the left. 
     * Hidden by default. */
+
+
+    body
+    {
+        background-image: url(assets/yellow.png);
+        background-repeat: no-repeat;
+        width: auto;
+        height: auto;
+        background-size: cover;
+    }
+
     #panel {
         height: 100%;
         width: null;
