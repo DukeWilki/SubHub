@@ -1,8 +1,16 @@
 
 body {
-    background-image: url("assets/subhub.png");
+    background-image: url("assets/arches-1920x1080.png");
     background-size: cover;
   }
+
+.navWidth {
+    width: 100%;
+}
+
+.btnMargin {
+    margin-left: auto;
+}
 
 #logInBanner {
     height: 80px;
@@ -16,9 +24,10 @@ body {
 }
 
 #headerRow {
-    height: 180px;
+    height: 200px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .subHeading {
@@ -26,10 +35,24 @@ body {
 }
 
 #subRow {
-    height: 100px;
+    height: 75px;
     display: flex;
+    align-items: center;
+    justify-content: center;    
 }
 
 #searchInput {
-    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+
+#foodButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.buttonYellow {
+    background-color: #F8D23A;
 }
