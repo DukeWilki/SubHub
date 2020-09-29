@@ -1,0 +1,58 @@
+
+body {
+    background-image: url("assets/arches-1920x1080.png");
+    background-size: cover;
+  }
+
+.navWidth {
+    width: 100%;
+}
+
+.btnMargin {
+    margin-left: auto;
+}
+
+#logInBanner {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.subHubTitle {
+    font-size: 175px;
+}
+
+#headerRow {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subHeading {
+    font-size: 35px;
+}
+
+#subRow {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+#searchInput {
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+
+#foodButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.buttonYellow {
+    background-color: #F8D23A;
+}
