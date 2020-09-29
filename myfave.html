@@ -25,11 +25,11 @@
         crossorigin="anonymous"></script>
 
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
 
-    <!-- Google Places API-->
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPWKk7dh9vSqX2ubJubUiPKHr_FVBwaHA&libraries=places&callback=initMap">
-        </script>
+
+
 
 </head>
 
@@ -49,9 +49,11 @@
                 <div class="collapse navbar-collapse" id="Navbar">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link" href="geolocation.html">
-                                Search</a></li>
+                                Map</a></li>
                         <li class="nav-item active"><a class="nav-link" href="myfave.html">
-                                My Fav</a>
+                                Search History</a>
+                        <li class="nav-item"><a class="nav-link" href="ourteam.html">
+                                Our Team</a></li>
                         </li>
                     </ul>
                 </div>
@@ -68,44 +70,19 @@
         <div class="container py-5 mt-5">
 
 
+            <h1 class="text-center">Search History</h1>
+            <br>
+            <br>
 
-
-            <h1 class="text-center">My Favourite Search</h1>
-            <br>
-            <br>
-            <br>
             <div class="row">
 
                 <div class="col-md-4">
-                    <h4 class="text-center"><strong>FOOD</strong></h4>
-                    <hr>
-                    <div class="profile-card-2"><img src="food.png" class="img img-responsive" style="width:350px">
-                        <div id="food-card" class="profile-name">Foodieee</div>
-
+                    <div id="cuisine-button">
                     </div>
-                </div>
 
-                <div class="col-md-4">
-                    <h4 class="text-center"><strong>PLACE</strong></h4>
-                    <hr>
-                    <div class="profile-card-2"><img src="travel.png" class="img img-responsive" style="width:350px">
-                        <div id="travel-card" class="profile-name">Hang Out</div>
-
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <h4 class="text-center"><strong>WEATHER</strong></h4>
-                    <hr>
-                    <div class="profile-card-2"><img src="weather.png" class="img img-responsive" style="width:350px">
-                        <div id="weather-card" class="profile-name">Sunny</div>
-
-                    </div>
                 </div>
 
             </div>
-
-        </div>
 
 
     </main>
@@ -136,5 +113,7 @@
 
 
 </body>
+
+<script src="myfave.js"></script>
 
 </html>

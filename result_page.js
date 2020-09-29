@@ -9,6 +9,9 @@ var resto_bounds = null;
 var service = null;
 
 show_markers_on_map = function (json_response) {
+
+	console.log(json_response);
+
 	var result = json_response.restaurants;
 	for (var idx = 0; idx < result.length; idx++) {
 		var loc_item = result[idx]
@@ -34,7 +37,7 @@ show_markers_on_map = function (json_response) {
 
 				console.log(location_data);
 
-				document.querySelector("#icon_id").innerHTML = "<img width='250px' src='" + location_data.restaurant.featured_image + "'>"
+				document.querySelector("#icon_id").innerHTML = "<img width='250px' src='" + location_data.restaurant.photos_url + "'>"
 				document.querySelector("#title_id").innerHTML = location_data.restaurant.name;
 				document.querySelector("#address").innerHTML = location_data.restaurant.location.address;
 				document.querySelector("#cuisines").innerHTML = location_data.restaurant.cuisines;
@@ -48,20 +51,20 @@ show_markers_on_map = function (json_response) {
 	setTimeout(
 		function () {
 			map.fitBounds(resto_bounds);
-			/*
+
 			setTimeout(
 				function () {
 					map.fitBounds(bounds);
 				}, 2000
 			)
-			*/
+
 		}, 2000
 	)
 }
 
-get_nearby_places = function (current_position, keyword) {
+get_nearby_places = function (current_position, keyword, lat, lon) {
 	$.ajax({
-		url: 'https://developers.zomato.com/api/v2.1/search?q=chinese&start=0&count=100&lat=-33.9646&lon=151.1010&radius=10000&order=desc',
+		url: 'https://developers.zomato.com/api/v2.1/search?q=' + keyword + '&start=0&count=100&lat=' + lat + '&lon=' + lon + '&radius=10000&order=desc',
 		type: 'GET',
 		headers: {
 			'Accept': 'application/json',

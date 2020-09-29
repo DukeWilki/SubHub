@@ -1,8 +1,11 @@
 
+var lng = 0;
+var lat = 0;
+
 showPosition = function (position) {
 
-	var lng = position.coords.longitude;
-	var lat = position.coords.latitude;
+	lng = position.coords.longitude;
+	lat = position.coords.latitude;
 
 	console.log(lng)
 	console.log(lat)
@@ -15,12 +18,37 @@ showPosition = function (position) {
 }
 navigator.geolocation.getCurrentPosition(showPosition);
 
+
+create_user_data = function (lon, lat, cuisine, radius) {
+
+	var userData = {
+		lon: lon,
+		lat: lat,
+		cuisine: cuisine,
+		radius: radius
+	}
+	var saved_locations = localStorage.getItem("saved_locations")
+	save_data = [];
+	if (saved_locations == null) {
+		save_data = [userData]
+	}
+	else {
+		console.log(saved_locations);
+		var save_data = JSON.parse(saved_locations);
+		save_data.push(userData)
+	}
+	string_save_data = JSON.stringify(save_data);
+	localStorage.setItem("saved_locations", string_save_data);
+}
+
 add_search_term = function () {
 	var radius_select = document.querySelector("#selectRadius").value;
 	localStorage.setItem("geo_radius", radius_select);
 
 	var resto_type = document.querySelector("#selectResto").value;
 	localStorage.setItem("geo_resto_type", resto_type);
+
+	create_user_data(lng, lat, resto_type, radius_select)
 
 	window.location = "display_page.html";
 }
