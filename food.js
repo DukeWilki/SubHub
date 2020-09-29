@@ -33,7 +33,6 @@ document.querySelectorAll(".topBtn").forEach((item) => {
     middleEasternBtn.classList.add("hidden");
     americanTags.classList.add("hidden");
     fastFoodTags.classList.add("hidden");
-    console.log("hello");
   });
 });
 
@@ -49,10 +48,10 @@ europeanBtn.addEventListener("click", showeuropeanTags);
 function showeuropeanTags() {
   europeanTags.classList.remove("hidden");
 }
-middleEasternBtn.addEventListener("click", showmiddleEasternTags);
-function showmiddleEasternTags() {
-  middleEasternTags.classList.remove("hidden");
-}
+// middleEasternBtn.addEventListener("click", showmiddleEasternTags);
+// function showmiddleEasternTags() {
+//   middleEasternTags.classList.remove("hidden");
+// }
 americanBtn.addEventListener("click", showamericanTags);
 function showamericanTags() {
   americanTags.classList.remove("hidden");
@@ -172,7 +171,7 @@ $(document).ready(function () {
           image1.src = "assets/vn.jpg";
           image2.src = "assets/vn.jpg";
           image3.src = "assets/vn.jpg";
-        } else if (cuisineFormated.match("south+east+asian")) {
+        } else if (cuisineFormated.match("southeast")) {
           image1.src = "assets/sea.jpg";
           image2.src = "assets/sea.jpg";
           image3.src = "assets/sea.jpg";
@@ -220,7 +219,7 @@ $(document).ready(function () {
           image1.src = "assets/afr.jpg";
           image2.src = "assets/afr.jpg";
           image3.src = "assets/afr.jpg";
-        } else if (cuisineFormated.match("ice+cream")) {
+        } else if (cuisineFormated.match("ice")) {
           image1.src = "assets/ic.jpg";
           image2.src = "assets/ic.jpg";
           image3.src = "assets/ic.jpg";
@@ -236,42 +235,42 @@ $(document).ready(function () {
           image1.src = "assets/keb.jpg";
           image2.src = "assets/keb.jpg";
           image3.src = "assets/keb.jpg";
-        } else if (cuisineFormated.match("fish+and+chips")) {
+        } else if (cuisineFormated.match("fish")) {
           image1.src = "assets/fc.jpg";
           image2.src = "assets/fc.jpg";
           image3.src = "assets/fc.jpg";
-        } else if (cuisineFormated.match("all+asian")) {
+        } else if (cuisineFormated.match("south")) {
+          image1.src = "assets/southasian.jpg";
+          image2.src = "assets/southasian.jpg";
+          image3.src = "assets/southasian.jpg";
+        } else if (cuisineFormated.match("asian")) {
           image1.src = "assets/asian.jpg";
           image2.src = "assets/asian.jpg";
           image3.src = "assets/asian.jpg";
-        } else if (cuisineFormated.match("all+european")) {
-            image1.src = "assets/european.jpg";
-            image2.src = "assets/european.jpg";
-            image3.src = "assets/european.jpg";
-        } else if (cuisineFormated.match("all+south+asian")) {
-            image1.src = "assets/southasian.jpg";
-            image2.src = "assets/southasian.jpg";
-            image3.src = "assets/southasian.jpg";
+        } else if (cuisineFormated.match("european")) {
+          image1.src = "assets/european.jpg";
+          image2.src = "assets/european.jpg";
+          image3.src = "assets/european.jpg";
         } else if (cuisineFormated.match("american")) {
-            image1.src = "assets/american.jpg";
-            image2.src = "assets/american.jpg";
-            image3.src = "assets/american.jpg";
-        } else if (cuisineFormated.match("fast+food")) {
-            image1.src = "assets/fastfood.jpg";
-            image2.src = "assets/fastfood.jpg";
-            image3.src = "assets/fastfood.jpg";
-        } else if (cuisineFormated.match("all+middle+eastern")) {
-            image1.src = "assets/me.jpg";
-            image2.src = "assets/me.jpg";
-            image3.src = "assets/me.jpg";
-        } else if (cuisineFormated.match("lebanese")) {
-            image1.src = "assets/lb.jpg";
-            image2.src = "assets/lb.jpg";
-            image3.src = "assets/lb.jpg";
-        } else if (cuisineFormated.match("turkish")) {
-            image1.src = "assets/tk.jpg";
-            image2.src = "assets/tk.jpg";
-            image3.src = "assets/tk.jpg";
+          image1.src = "assets/american.jpg";
+          image2.src = "assets/american.jpg";
+          image3.src = "assets/american.jpg";
+        } else if (cuisineFormated.match("fast")) {
+          image1.src = "assets/fastfood.jpg";
+          image2.src = "assets/fastfood.jpg";
+          image3.src = "assets/fastfood.jpg";
+        // } else if (cuisineFormated.match("middle")) {
+        //   image1.src = "assets/me.jpg";
+        //   image2.src = "assets/me.jpg";
+        //   image3.src = "assets/me.jpg";
+        // } else if (cuisineFormated.match("lebanese")) {
+        //   image1.src = "assets/lb.jpg";
+        //   image2.src = "assets/lb.jpg";
+        //   image3.src = "assets/lb.jpg";
+        // } else if (cuisineFormated.match("turkish")) {
+        //   image1.src = "assets/tk.jpg";
+        //   image2.src = "assets/tk.jpg";
+        //   image3.src = "assets/tk.jpg";
         } else {
           image1.src = "assets/food.png";
           image2.src = "assets/food.png";
