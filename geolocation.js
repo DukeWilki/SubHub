@@ -16,7 +16,8 @@ showPosition = function (position) {
 	localStorage.setItem("geo_lng", lng)
 	localStorage.setItem("geo_lat", lat)
 }
-navigator.geolocation.getCurrentPosition(showPosition);
+
+navigator.geolocation.getCurrentPosition(showPosition)
 
 
 create_user_data = function (lon, lat, cuisine, radius) {

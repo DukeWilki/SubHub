@@ -7,71 +7,118 @@ var map = null;
 var bounds = null;
 var resto_bounds = null;
 var service = null;
+var directionsService = null;
+var directionsRenderer = null;
+var my_position_marker = null;
+var infowindow = null;
 
-show_markers_on_map = function (json_response) {
+show_location_details = function (response, status) {
+	console.log(response)
+	var photo_array = response.photos;
 
-	console.log(json_response);
 
-	var result = json_response.restaurants;
+	$("#resto-photos").html("");
+
+
+	for (var idx = 0; idx <= 2; idx++) {
+		var photo_item = photo_array[idx];
+		var image_link = photo_item.getUrl({ maxWidth: 300, maxHeight: 300 });
+		console.log(image_link);
+
+		var cardImg = $('<div>').attr({ "class": "card align-center", "width": "100%" });
+		var cardBodyImg = $('<div>').attr({ "class": "card-body" });
+
+
+		var imgShow = $('<img>').attr({ "class": "img img-responsive", "src": image_link });
+		//"<img class='img img-responsive' src='" + image_link + "'/>");
+
+		cardBodyImg.append(imgShow)
+		cardImg.append(cardBodyImg)
+		$("#resto-photos").append(cardImg);
+
+
+	}
+}
+
+render_direction_on_map = function (response, status) {
+	console.log(response)
+	console.log(status)
+	if (status == 'OK') {
+		directionsRenderer.setDirections(response);
+	}
+}
+
+show_markers_on_map = function (result) {
 	for (var idx = 0; idx < result.length; idx++) {
 		var loc_item = result[idx]
-		var lat = loc_item.restaurant.location.latitude;
-		var lng = loc_item.restaurant.location.longitude;
-		pos = {
-			lat: parseFloat(lat),
-			lng: parseFloat(lng)
-		};
 		var marker = new google.maps.Marker({
-			position: pos,
+			position: loc_item.geometry.location,
 			map: map,
 			title: loc_item.name,
-			customInfo: loc_item,
-			website: loc_item.url
+			customInfo: loc_item
 		});
 		bounds.extend(marker.getPosition())
-		resto_bounds.extend(marker.getPosition())
+
+
 		google.maps.event.addListener(marker, "click",
 			function (response) {
 				var marker_location = this.position
 				var location_data = this.customInfo
 
-				console.log(location_data);
 
-				document.querySelector("#icon_id").innerHTML = "<img width='250px' src='" + location_data.restaurant.photos_url + "'>"
-				document.querySelector("#title_id").innerHTML = location_data.restaurant.name;
-				document.querySelector("#address").innerHTML = location_data.restaurant.location.address;
-				document.querySelector("#cuisines").innerHTML = location_data.restaurant.cuisines;
-				document.querySelector("#rating").innerHTML = location_data.restaurant.user_rating.aggregate_rating;
+				let request = {
+					placeId: location_data.place_id,
+					fields: ['name', 'formatted_address', 'geometry', 'rating',
+						'website', 'photos']
+				};
+				service.getDetails(request, show_location_details);
 
-				map.setCenter(marker_location);
+				$(".resto-info").html("");
+
+
+				var restoCard = $('<div>').attr({ "class": "card shadow m-4 ml-3 flex-container" })
+				var restoCardBody = $('<div>').attr({ "class": "card-body" });
+
+				var nameofresto = $('<p>').html("Name of Restaurant: " + "<mark>" + location_data.name + "</mark>");
+				var addressofresto = $('<p>').html("Address of Restaurant: " + "<mark>" + location_data.vicinity + "</mark>");
+				var ratingofresto = $('<p>').html("Rating of Restaurant: " + "<mark>" + location_data.rating + "</mark>");
+
+				restoCardBody.append(nameofresto, addressofresto, ratingofresto);
+				restoCard.append(restoCardBody);
+
+				$(".resto-info").append(restoCard);
+
+				var request_direction = {
+					origin: my_position_marker.getPosition(),
+					destination: marker_location,
+					travelMode: google.maps.TravelMode["DRIVING"]
+
+				};
+				directionsService.route(request_direction, render_direction_on_map)
+				infowindow.setContent(location_data.name + "<br>" + location_data.vicinity)
+				infowindow.open(map, this);
 			}
 		)
 	}
 	map.fitBounds(bounds);
-	setTimeout(
-		function () {
-			map.fitBounds(resto_bounds);
-
-			setTimeout(
-				function () {
-					map.fitBounds(bounds);
-				}, 2000
-			)
-
-		}, 2000
-	)
 }
 
-get_nearby_places = function (current_position, keyword, lat, lon) {
-	$.ajax({
-		url: 'https://developers.zomato.com/api/v2.1/search?q=' + keyword + '&start=0&count=100&lat=' + lat + '&lon=' + lon + '&radius=10000&order=desc',
-		type: 'GET',
-		headers: {
-			'Accept': 'application/json',
-			'user-key': '143816ae91118f8fc4dfd5768132705f'
-		},
-		success: show_markers_on_map
-	})
+get_nearby_places = function (current_position, keyword) {
+	let request = {
+		location: current_position,
+		keyword: keyword,
+		radius: parseInt(radiusSelect)
+	};
+	service = new google.maps.places.PlacesService(map);
+	service.nearbySearch(request, get_nearby_places_callback);
+}
+
+get_nearby_places_callback = function (response) {
+	console.log(response);
+	if (response.length == 0) {
+		alert("no places found")
+	}
+	show_markers_on_map(response)
 }
 
 
@@ -85,19 +132,25 @@ initMap = function () {
 		lat: parseFloat(lat),
 		lng: parseFloat(lng)
 	};
+	directionsService = new google.maps.DirectionsService();
+	directionsRenderer = new google.maps.DirectionsRenderer();
 	bounds = new google.maps.LatLngBounds();
+	infowindow = new google.maps.InfoWindow();
 	resto_bounds = new google.maps.LatLngBounds();
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: pos,
 		zoom: 15,
 		mapTypeId: 'satellite'
 	});
-	var marker = new google.maps.Marker({
+	my_position_marker = new google.maps.Marker({
 		position: pos,
 		map: map,
 		icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/library_maps.png"
 	});
-	bounds.extend(marker.getPosition())
+	directionsRenderer.setPanel(document.getElementById('directionsPanel'));
+	directionsRenderer.setMap(map);
+
+	bounds.extend(my_position_marker.getPosition())
 
 	get_nearby_places(
 		pos,

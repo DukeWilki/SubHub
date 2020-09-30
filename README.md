@@ -23,10 +23,11 @@
 * [Chrome DevTools] (https://developers.google.com/web/tools/chrome-devtools) - The editor pages on-the-fly and problem diagnostic.
 * [W3C MarkUp Validator] (https://validator.w3.org/) - The markup validation service (HTML, XHTML) of web documents.
 * [GetBootstrap] (https://getbootstrap.com/) - Open-source CSS framework directed at responsive, mobile-first front-end web development. 
-* [OpenWeather API] (https://openweathermap.org/api) - OPEN API to retrieve weather data for cities.
 * [Postman] (https://www.postman.com/) - The Postman API allows to easy access to API.
+* [Favic-O-Matic] (https://favicomatic.com/) - The favicon generator both .ico, PNG and the HTML code needed.
 
 ## API
+* Google Maps API
 * Google Places API
 * Zomato API
 
