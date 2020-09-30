@@ -1,0 +1,51 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.tags {
+    display: flex;
+    height: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+    /* min-width: 500px; */
+}
+
+button {
+    width: 20px;
+    margin: 15px;
+}
+
+.subtags {
+    display: flex;
+    height: 5 0px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0px;
+    align-items: center;
+}
+
+.btn-outline-primary {
+    margin-top: 10px;
+    margin: 15px;
+}
+
+.open {
+    width: 250px;
+}
+
+.hidden {
+    display: none;
+}
+
+h4 {
+    margin-left: 50px;
+}
+
+img {
+    width: 350px;
+    height: 500px;
+}
